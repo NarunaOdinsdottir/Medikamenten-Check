@@ -29,6 +29,22 @@ def init_db():
         FOREIGN KEY(patient_id) REFERENCES patienten(id)
     )
     """)
+    cursor.execute("""
+    CREATE TABLE IF NOT EXISTS audit_log (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        aktion TEXT NOT NULL,
+        timestamp TEXT NOT NULL,
+        details TEXT
+    )
+    """)
+
+    cursor.execute("""
+    CREATE TABLE IF NOT EXISTS ranks (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        name TEXT NOT NULL,
+        min_xp INTEGER NOT NULL
+    )
+    """)
 
     conn.commit()
     conn.close()
