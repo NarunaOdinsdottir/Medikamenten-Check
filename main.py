@@ -5,7 +5,12 @@ from medikament import Medikament
 from vault_utils import vault_intro, FARBE_GRUEN, FARBE_GELB, FARBE_ENDE
 import random
 from datetime import datetime
+from input_utils import eingabe_int, eingabe_zeit, eingabe_text, ja_nein
 
+anzahl = eingabe_int("Wie viele Medikamente sollen heute überprüft werden?")
+m_name = eingabe_text("Name")
+m_zeit = eingabe_zeit("Uhrzeit")
+m_genommen = ja_nein("Schon genommen?")
 
 sprüche_motivierend = [
     "Jede Dosis bringt dich näher zur Genesung, Paladin.",
