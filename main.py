@@ -2,10 +2,11 @@
 from database import init_db
 from patient import Patient
 from medikament import Medikament
-from vault_utils import vault_intro, FARBE_GRUEN, FARBE_GELB, FARBE_ENDE
+from vault_utils import vault_intro, FARBE_GRUEN, FARBE_GELB, FARBE_ENDE, slow_print
 import random
 from datetime import datetime
 from input_utils import eingabe_int, eingabe_zeit, eingabe_text, ja_nein
+from security import pruefe_integritaet, get_in tegritaets_fehler_meldung, aktualisiere_integritaet
 
 anzahl = eingabe_int("Wie viele Medikamente sollen heute überprüft werden?")
 m_name = eingabe_text("Name")
@@ -31,7 +32,10 @@ sprüche_mahnend = [
 def main():
     vault_intro()
     init_db()
-
+#---Hier die Sicherheitsprüfung---
+    if not pruefe_integritaet():
+        slow_print(FARBE_ROT + get_integritaets_fehler_meldung() + FARBE_ENDE , delay=0.05)
+        
     print("Willkommen im Vault-Tec Terminal.")
     name = input("Name des Vault-Bewohners: ").strip()
     patient = Patient.laden(name)
