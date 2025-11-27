@@ -74,3 +74,11 @@ def main():
 
 if __name__ == "__main__":
     main()
+    aktualisiere_integritaet()
+
+    print(FARBE_GRUEN + "\nVault-Syncronisierung agbeschlossen. Daten sicher gespeichert." + FARBE_ENDE)
+    
+
+
+
+
