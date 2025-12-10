@@ -96,7 +96,7 @@ Tabelle: medikamente
 - zeit
 - genommen (BOOLEAN)
 Tabellen um Spalten wie „XP“, „Rad-Level“, „Status“ oder „letzte Änderung“ erweitern.  
-Auch Security-technisch kannst du SQL-Parameterbindung üben (SQL Injection-Schutz).
+
 
 ## 🧩 2. Objektorientierte Struktur (OOP)
 
@@ -128,7 +128,7 @@ Das erlaubt später:
 - **Verknüpfung mit GUI oder API**
     
 
-Das System wird also skalierbar und wartbar – wie ein echtes Programm und nicht nur ein Skript.
+Das System wird also skalierbar und wartbar.
 
 ## ☣️ 3. „Rad-Level“ (Stress-/Vergesslichkeitsindikator)
 
@@ -178,17 +178,14 @@ Man kann XP direkt an Aktionen koppeln:
 - Hash für sensible Daten (z. B. Medikamentenname)
     
 - Optional AES-Verschlüsselung für SQLite-DB (später mit `sqlcipher` oder `cryptography`)
-    
-
-💡 **Bonusidee:**  
-Implementiere eine „Tamper-Detection“ – bei Änderungen außerhalb des Programms prüft eine Prüfsumme (z. B. SHA256 der DB-Datei), ob Manipulation stattgefunden hat.
+   
 
 ---
 
 ## 🐋 5. Containerisierung mit Docker
 
 
-- Das ganze Terminal isoliert ausführen
+- Den ganzen Code isoliert ausführen
     
 - Später sogar auf Raspberry Pi deployen
     
@@ -285,8 +282,7 @@ CMD ["python", "vaultmed.py"]
 - Tamper-Detection für die DB (SHA-Prüfsumme beim Start)
     
 
-💡 **Lernziel:** reale Security-Praktiken (Input-Härtung, Hashes, Checksums) – übertragbar auf künftige Ethical-Hacking-Laufbahn.
-
+💡 **Lernziel:** reale Security-Praktiken (Input-Härtung, Hashes, Checksums) 
 ---
 
 ## 🐋 **Stufe 4 – Containerisierung (Vault in a Box)**
@@ -339,15 +335,6 @@ CMD ["python", "vaultmed.py"]
 
 ---
 
-## 📘 **Empfohlene Lernreihenfolge:**
-
-| Woche | Fokus          | Inhalte                      | Ergebnis                         |
-| ----- | -------------- | ---------------------------- | -------------------------------- |
-| 1     | OOP & SQLite   | Klassen, DB-Einbindung       | Grundgerüst mit Speicherfunktion |
-| 2     | Gamification   | XP, Rad-Level, ASCII-UI      | Terminal wird lebendig           |
-| 3     | Security Layer | Validation, Hashing, Logging | System sicher & robust           |
-| 4     | Dockerisierung | Isoliertes Setup             | Laufendes Vault-Med-System       |
-| 5+    | Integration    | Self-Care, Kaktoro, GUI      | Persönliches Mini-OS-Ökosystem   |
 
 
 
